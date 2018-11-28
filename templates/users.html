@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	
+	<h1>Users List</h1>
+	<table class = "table table-striped">
+		<tr>
+			<th>Username</td>
+			<th>Level</td>
+		</tr>
+		{% for user in users %}
+			<tr>
+				<td><a href="userList/{{user["userId"]}}">{{user["username"]}}</a></td>
+				<td>{{user["level3"]}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+		
+	<div align = "center">
+		<a class="btn btn-success" href="/dashboard">Back</a>
+	</div>
+	
+{% endblock %}
+

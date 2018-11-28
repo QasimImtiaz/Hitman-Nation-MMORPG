@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1> Upload Image </h1>
+	<hr>
+	<div align = "center">
+		<h3>{{ msg }}</h3>
+	</div>
+	<hr>
+	<form action = "" method="post" name="form" enctype="multipart/form-data">
+		<div align = "center">
+
+			
+       			<input type="file" name="image" id="image" />
+			<input class="btn btn-primary" type="submit" name="submit" id="submit" />
+		</div>
+	</form>
+	<hr>
+	<div align = "center">
+		<a class="btn btn-success" href="/dashboard">Back</a>
+	</div>
+	
+{% endblock %}

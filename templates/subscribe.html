@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+<body class = "body">
+	<div class="container">
+		{% if session['is_logged_in'] %}
+			<form name="topaypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_xclick-subscriptions">
+				<input type="hidden" name="custom" value="{{session['username']}}"/>
+				<input type="hidden" name="business" value="qasimimtiaz47@gmail.com">
+				<input type="hidden" name="item_name" value="subscription button">
+				<input type="hidden" name="item_number" value="500">
+				<input type="hidden" name="no_shipping" value="1">
+				<input type="hidden" name="a3" value="10.00">
+				<input type="hidden" name="p3" value="1">
+				<input type="hidden" name="t3" value="M">
+				<input type="hidden" name="src" value="1">
+				<input type="hidden" name="sra" value="1">
+				<input type="hidden" name="return" value="/success">
+				<input type="hidden" name="cancel_return" value="/dashboard">
+				<input type="hidden" name="notify_url" value="/ipn/">
+				<input type="submit" value="Subscribe" name="submit" title="PayPal - The safer, easier way to pay online!" class="btn btn-primary">
+			</form>	
+		{% else %}
+			<p>You need to be <a href="/login/" target="blank"><strong>logged in</strong></a> to subscribe.</p>
+		{% endif %}
+	</div>
+</body>
+{% endblock %}

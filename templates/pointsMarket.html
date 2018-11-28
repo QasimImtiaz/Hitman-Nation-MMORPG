@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>Points Market</h1>
+	<h3>{{ msg }}</h3>
+	<form action = "" method = "POST">
+		<div class = "form-group">
+			<label>Points($50 per point)</label>
+			<input min = '0' type="number" step = "1" name="points" class="form-control" value = {{request.form.points}}>
+			
+
+		</div>
+		<div align = "center">
+                	<button type ="submit" class="btn btn-primary">Buy</button>	
+		</div>
+	
+	</form>
+
+	<hr>
+	<div align = "center">
+		<a class="btn btn-success" href="/dashboard">Back</a>
+	</div>
+	
+{% endblock %}
+

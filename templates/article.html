@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	
+	
+	<h1>{{article[1]}}</h1>
+	<small>Written by {{article[2]}} on {{article[5]}}</small>
+	<hr>
+	<div>
+		{{article[3] | safe}}
+	</div>
+	<hr>
+	<div align = "center">
+		<a class="btn btn-success" href="/newspaper">Back</a>
+        </div>
+
+{% endblock %}
+

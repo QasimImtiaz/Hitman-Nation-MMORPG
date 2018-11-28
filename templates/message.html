@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+        <h1>{{mail[1]}}</h1>
+        <small>Sent from {{mail[4]}} on {{mail[3]}}</small>
+        <hr>
+        <div>
+		
+        	{{mail[2] |  safe}}
+        </div>
+	<hr>
+	<div align = "center">
+		<a class = "btn btn-success" href="/send_message/{{mail[4]}}">Reply</a>	<a class="btn btn-success" href="/mailbox">Back</a>
+	</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>Newspaper</h1>
+	<ul class="list-group">
+		{% for article in articles %}
+			<li class="list-group-item"><a href ="newspaper/{{article[0]}}">{{article[1]}}</a></li>
+		{% endfor %}
+	</ul>
+	<div align = "center">
+		<a class="btn btn-success" href="/dashboard">Back</a>
+	</div>
+{% endblock %}
+

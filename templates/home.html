@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<div class="jumbotron text-center" bgcolor = "#000000">
+		<h1>Welcome to Hitman Nation</h1>
+		<p class="lead">Game that is set up in a fntasy world that has Hitmans which has only one purpose in life which is to kill anyway possible. Join now to train, fight, kill, make money and land yourself in the top 10 wanted list.</p>
+		
+	</div>
+	<div align = "center">
+		<img src = {{ url_for('static', filename = 'homepageimage.jpg' )}}>
+	</div>				
+{% endblock %}

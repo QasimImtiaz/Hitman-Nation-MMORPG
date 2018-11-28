@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<hr>
+	<div align = "center">
+		<a class = "btn btn-success" href="/Sent_Messages">Outbox</a>
+	</div>
+	<hr>
+
+	<h1>Mailbox</h1>
+	<table class = "table table-striped">
+		<tr>
+			<th>ID</th>
+			<th>Username</th>
+			<th>Subject</th>
+			<th>Date</th>
+		</tr>
+		{% for mail in mails %}
+			<tr>
+				<td>{{mail[0]}}</td>
+				<td>{{mail[4]}}</td>
+				<td>{{mail[1]}}</td>
+				<td>{{mail[3]}}</td>
+				<td><a class = "btn btn-success" href="/view_message/{{mail[0]}}">View Message</a></td>
+			</tr>
+		{% endfor %}
+	</table>
+	<hr>
+	<div align="center">
+       		<a class="btn btn-success" href="/dashboard">Back</a>
+	</div>
+{% endblock %} 

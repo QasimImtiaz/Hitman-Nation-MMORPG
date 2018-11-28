@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+	<h1>{{ user["username"]}} [{{user["userId"]}}]</h1>
+	<hr>
+	<table class = "table table-striped">
+		<tr>
+			<th>Profile Image</th>
+			<th>Profile Information</th>
+			<th>Actions</th>
+		</tr>
+		<tr>
+			<td><img src = {{ url_for('static', filename = user["DP"])}} height = "250" width = "250"></td>
+			<td>
+			<ul class = "list-group">
+				<li class = "list-group-item">Username: {{ user["username"]}} [{{user["userId"]}}]</li>
+				<li class = "list-group-item">Level: {{ user["level3"]}}</li>
+				<li class = "list-group-item">House: {{ user["house"]}}</li>
+				<li class = "list-group-item">Health: {{ user["Health"]}}</li>
+				<li class = "list-group-item">Attacks: {{user["attacks2"]}}</li>
+			</ul>
+			</td>
+									
+			<td>
+			<ul class = "list-group">
+			<li class = "list-group-item"><a href="{{ url_for('send_message', recipient=user[1])}}">Send Message</a></li>
+			<li class = "list-group-item"><a href="{{ url_for('attack_user', user=user[1])}}">Attack User</a></li>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<div align="center">
+		<a class="btn btn-success" href="/userList">Back</a>
+	</div>
+{% endblock %}
+

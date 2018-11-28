@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+	<h1>Gym</h1>
+	<hr>
+	<div align = "center">
+		<h3>{{ msg }}</h3>
+	</div>
+	<form action="" method="POST">
+		<div class = "form-group">
+			<label for = "strength">Strength</label>
+			<input type="text" name="strength" id = "strength" class="form-control">
+		</div>
+		<div class = "form-group">
+			<label for = "defence">Defence</label>
+			<input type="text" name="defence" id="defence" class = "form-control">
+		</div>
+		<div class = "form-group">
+			<label for = "speed">Speed</label>
+			<input type="text" name = "speed" id="speed" class="form-control">
+		</div>
+		<button type="submit" class = "btn btn-primary">Submit</button>
+	</form>
+	<hr>
+	<div align = "center">
+        	<a class="btn btn-success" href="/dashboard">Back</a>
+	</div>
+
+{% endblock %}
